@@ -6,8 +6,12 @@
       <input v-model="first_name" id="" class="form-control" type="text">
       <label for="last_name">Last name</label>
       <input v-model="last_name" id="" class="form-control" type="text">
-      <label for="email" required>Email</label>
-      <input v-model="email" id="" class="form-control" type="text">
+      <label for="email" >Email</label>
+      <input v-model="email" id="" class="form-control" type="text" required>
+      <label for="created_at">created_at</label>
+      <input v-model="created_at" id="created_at" class="form-control" type="text">
+      <label for="updated_at">updated_at</label>
+      <input v-model="updated_at" id="updated_at" class="form-control" type="text">
       <button @click.prevent="addContact" class="btn btn-success">Create contact</button>
     </form>
     <hr>
@@ -57,8 +61,8 @@ export default {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
-        created_at:'',
-        updated_at:'',
+        created_at: this.created_at,
+        updated_at: this.updated_at,
       }
     },
 
@@ -68,7 +72,6 @@ export default {
 
     deleteContact(contact){
       const index = this.contacts.indexOf(contact);
-      //console.log(index);
       this.contacts.splice(index, 1);
     },
 
